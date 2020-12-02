@@ -1,5 +1,5 @@
 package com.example.lojavirtual.controller;
 
-public class ClienteController {
+public class ClienteController{
 
 }
