@@ -8,11 +8,11 @@ import javax.persistence.Id;
 
 @Entity
 public class Adm {
-	public Adm(String login, String senha) {
+	/*public Adm(String login, String senha) {
 		super();
 		this.login = login;
 		this.senha = senha;
-	}
+	}*/
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
