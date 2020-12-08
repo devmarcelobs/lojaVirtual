@@ -6,4 +6,5 @@ import com.example.lojavirtual.model.Carrinho;
 
 public interface CarrinhoRepository extends JpaRepository<Carrinho, Integer> {
 
+    void save();
 }
