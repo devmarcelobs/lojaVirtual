@@ -3,6 +3,11 @@ package com.example.lojavirtual.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.lojavirtual.model.Adm;
 import com.example.lojavirtual.model.Carrinho;
@@ -14,41 +19,42 @@ import com.example.lojavirtual.repository.CarrinhoRepository;
 import com.example.lojavirtual.repository.ClienteRepository;
 import com.example.lojavirtual.repository.ProdutoRepository;
 
+@RestController
+@RequestMapping("/Adm")
 public class AdmController implements Login{
+	@Autowired
 	private AdmRepository admRepository;
+	@Autowired
 	private ProdutoRepository produtoRepository;
+	@Autowired
 	private ClienteRepository clienteRepository;
+	@Autowired
 	private CarrinhoRepository carrinhoRepository;
 	
-	@Autowired
+	/*@Autowired
 	public AdmController(AdmRepository admRepository, ProdutoRepository produtoRepository, ClienteRepository clienteRepository, CarrinhoRepository carrinhoRepository) {
 		this.admRepository = admRepository;
 		this.produtoRepository = produtoRepository;
 		this.clienteRepository = clienteRepository;
 		this.carrinhoRepository = carrinhoRepository;
-	}
+	}*/
 	
 	@Override
-	public boolean login(String login, String senha, Adm adm) {
+	@GetMapping("/loginAdm")
+	public boolean login(@RequestBody String login, String senha, Adm adm) {
 		if(admRepository.findById(adm.getId())!=null) {
 			if(adm.getLogin().equals(login)) {
 				if(adm.getSenha().equals(senha)) {
 					return true;
 				}
-				else {
-					return false;
-				}
-			}
-			else {
-				return false;
 			}
 		}
-		else {
-			return false;
-		}
+		
+		return false;
 	}
-
-	public boolean CadastroProduto(Integer codigoBarra, Produto produto) {
+	
+	@PostMapping("/addProduto")
+	public boolean CadastroProduto(@RequestBody Produto produto) {
 		if(produtoRepository.findByCodigoBarra(produto.getCodigoBarra())==null) {
 			produtoRepository.save(produto);
 			return true;
@@ -59,7 +65,8 @@ public class AdmController implements Login{
 		}
 	}
 	
-	public boolean CadastroCliente(String cpf, Cliente cliente) {
+	@PostMapping("/addCliente")
+	public boolean CadastroCliente(@RequestBody Cliente cliente) {
 		if(clienteRepository.findByCpf(cliente.getCpf())==null) {
 			clienteRepository.save(cliente);
 			return true;

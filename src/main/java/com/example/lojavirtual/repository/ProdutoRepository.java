@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.lojavirtual.model.Produto;
 
 public interface ProdutoRepository extends JpaRepository<Produto, Integer> {
-	List<Produto> findByCodigoBarra(int codigoBarra);
+	Produto findByCodigoBarra(int codigoBarra);
 }
