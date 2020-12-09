@@ -52,4 +52,8 @@ public class Carrinho {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
+
+	public void add(Carrinho carrinho) {
+
+	}
 }
