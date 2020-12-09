@@ -9,7 +9,7 @@ public class Cliente {
 	
 	@Id
 	@Column(name="cpf", nullable=false)
-	private int cpf;
+	private String cpf;
 	
 	@Column(name="nome", nullable=false)
 	private String nome;
@@ -17,11 +17,11 @@ public class Cliente {
 	@Column(name="endereco", nullable=false)
 	private String endereco;
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 

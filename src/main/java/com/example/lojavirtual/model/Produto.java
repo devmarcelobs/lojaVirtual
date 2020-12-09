@@ -2,16 +2,16 @@ package com.example.lojavirtual.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.Type;
 
 @Entity
 public class Produto {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	@Column(name="codigoBarra", nullable=false)
+	private int codigoBarra;
 	
 	@Column(name="nome", nullable=false)
 	private String nome;
@@ -21,13 +21,17 @@ public class Produto {
 	
 	@Column(name="valor", nullable=false)
 	private Double valor;
+	
+	@Type(type = "serializable")
+	@Column(name="Carrinho", nullable=true)
+	private Carrinho carrinho;
 
-	public int getId() {
-		return id;
+	public int getCodigoBarra() {
+		return codigoBarra;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setCodigoBarra(int codigoBarra) {
+		this.codigoBarra = codigoBarra;
 	}
 
 	public String getNome() {
@@ -52,5 +56,13 @@ public class Produto {
 
 	public void setValor(Double valor) {
 		this.valor = valor;
+	}
+
+	public Carrinho getCarrinho() {
+		return carrinho;
+	}
+
+	public void setCarrinho(Carrinho carrinho) {
+		this.carrinho = carrinho;
 	}
 }

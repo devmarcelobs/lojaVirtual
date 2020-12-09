@@ -1,20 +1,30 @@
 package com.example.lojavirtual.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
+import org.hibernate.annotations.Type;
+
+//como fazer o uso de um objeto na coluna do JPA
 @Entity
 public class Carrinho {
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
+	//existe alguma coutra tag q da para usar?
+	@Type(type = "serializable")
 	@Column(name="produto", nullable=false)
-	private Produto produto;
+	//@Transient
+	//@Embedded
+	private Produto produtos;
 	
 	@Column(name="quantidade", nullable=false)
 	private int quantidade;
@@ -27,19 +37,19 @@ public class Carrinho {
 		this.id = id;
 	}
 
-	public Produto getProduto() {
-		return produto;
+	public Produto getProdutos() {
+		return produtos;
 	}
 
-	public void setProduto(Produto produto) {
-		this.produto = produto;
+	public void setProdutos(Produto produtos) {
+		this.produtos = produtos;
 	}
 
-	public int getQuantidaded() {
+	public int getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidaded(int quantidade) {
+	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
 
