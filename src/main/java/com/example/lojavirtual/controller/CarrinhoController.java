@@ -1,6 +1,7 @@
 package com.example.lojavirtual.controller;
 
 import com.example.lojavirtual.model.Carrinho;
+import com.example.lojavirtual.model.Cliente;
 import com.example.lojavirtual.repository.CarrinhoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,8 @@ public class CarrinhoController {
     private boolean existe(Integer id) {
         return carrinhoRepository.existsById(id);
     }
-    @Transactional (readOnly = false)
+
+    @Transactional(readOnly = false)
     public Carrinho edit(Carrinho novoCarrinho) throws Exception {
         if (existe(novoCarrinho.getId())) {
             return carrinhoRepository.save(novoCarrinho);
@@ -35,21 +37,18 @@ public class CarrinhoController {
             throw new Exception("Não existe!");
         }
     }
-    @Transactional (readOnly = true)
-    public List<Carrinho> ler() {
-        return carrinhoRepository.findAll();
+
+    @Transactional(readOnly = true)
+    public List<Carrinho> ler() { return carrinhoRepository.findAll();
     }
-    @Transactional (readOnly = false)
+
+    @Transactional(readOnly = false)
     public void delete(Carrinho novoCarrinho) {
         carrinhoRepository.delete(novoCarrinho);
     }
+
+//    public Carrinho mostrar (Cliente Cl, Carrinho DetalheCarrinho) {
+//
+//    }
+
 }
-
-
-
-
-
-
-
-
-

@@ -11,12 +11,12 @@ public class ClienteController {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    private boolean existe(int novoCliente) {
+    private boolean exist(String novoCliente) {
         return clienteRepository.existsById(novoCliente);
     }
 
     public Cliente save(Cliente novoCliente) throws Exception {
-        if (existe(novoCliente.getCpf())) {
+        if (exist(novoCliente.getCpf())) {
             throw new Exception("Já existe!");
         } else {
             return clienteRepository.save(novoCliente);
@@ -24,7 +24,7 @@ public class ClienteController {
     }
 
     public Cliente edit(Cliente novoCliente) throws Exception {
-        if (existe(novoCliente.getCpf())) {
+        if (exist(novoCliente.getCpf())) {
             return clienteRepository.save(novoCliente);
         } else {
             throw new Exception("Não existe!");
