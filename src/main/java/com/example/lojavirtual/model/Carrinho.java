@@ -2,13 +2,7 @@ package com.example.lojavirtual.model;
 
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 import org.hibernate.annotations.Type;
 
@@ -25,7 +19,12 @@ public class Carrinho {
 	//@Transient
 	//@Embedded
 	private Produto produtos;
-	
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "client_id", referencedColumnName = "cpf")
+	private Cliente cliente;
+
+
 	@Column(name="quantidade", nullable=false)
 	private int quantidade;
 
@@ -55,5 +54,13 @@ public class Carrinho {
 
 	public void add(Carrinho carrinho) {
 
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 }

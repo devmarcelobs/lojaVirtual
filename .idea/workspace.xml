@@ -5,12 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ceff830f-2de8-428f-9b23-7a56e7e57e3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lojavirtual/controller/JPARepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lojavirtual/controller/CarrinhoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lojavirtual/controller/CarrinhoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lojavirtual.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lojavirtual.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lojavirtual/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lojavirtual/controller/ClienteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lojavirtual/model/Carrinho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lojavirtual/model/Carrinho.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lojavirtual/repository/CarrinhoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lojavirtual/repository/CarrinhoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/com.example/lojavirtual/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/com.example/lojavirtual/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/PrincipalApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/PrincipalApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/controller/AdmController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/controller/AdmController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/controller/CarrinhoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/controller/CarrinhoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/controller/ClienteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/model/Adm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/model/Adm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/model/Carrinho.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/model/Carrinho.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/model/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/model/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/model/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/model/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/model/Produto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/repository/AdmRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/repository/AdmRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/repository/CarrinhoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/repository/CarrinhoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/repository/ClienteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/repository/ClienteRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/repository/ProdutoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/lojavirtual/repository/ProdutoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/lojavirtual/PrincipalApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/lojavirtual/PrincipalApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +44,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Alineb-v" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,12 +58,35 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.lojavirtual.controller" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="PrincipalApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.example.lojavirtual.PrincipalApplication" />
+      <module name="lojavirtual" />
+      <option name="PROGRAM_PARAMETERS" value="$MAVEN_REPOSITORY$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.example.lojavirtual.PrincipalApplication" />
+      <module name="lojavirtual" />
+      <option name="PROGRAM_PARAMETERS" value="$MAVEN_REPOSITORY$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -65,7 +104,41 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Alineb-v" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="text">
+                    <value>
+                      <list>
+                        <option value="Aline" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="Alineb-v" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>

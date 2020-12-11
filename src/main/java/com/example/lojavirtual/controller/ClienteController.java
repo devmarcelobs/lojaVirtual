@@ -11,25 +11,25 @@ public class ClienteController {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    private boolean existe(int novoCliente) {
-        return clienteRepository.existsById(novoCliente);
-    }
-
-    public Cliente save(Cliente novoCliente) throws Exception {
-        if (existe(novoCliente.getCpf())) {
-            throw new Exception("Já existe!");
-        } else {
-            return clienteRepository.save(novoCliente);
-        }
-    }
-
-    public Cliente edit(Cliente novoCliente) throws Exception {
-        if (existe(novoCliente.getCpf())) {
-            return clienteRepository.save(novoCliente);
-        } else {
-            throw new Exception("Não existe!");
-        }
-    }
+//    private boolean existe(int novoCliente) {
+//        return clienteRepository.existsById(novoCliente);
+//    }
+//
+//    public Cliente save(Cliente novoCliente) throws Exception {
+//        if (existe(novoCliente.getCpf())) {
+//            throw new Exception("Já existe!");
+//        } else {
+//            return clienteRepository.save(novoCliente);
+//        }
+//    }
+//
+//    public Cliente edit(Cliente novoCliente) throws Exception {
+//        if (existe(novoCliente.getCpf())) {
+//            return clienteRepository.save(novoCliente);
+//        } else {
+//            throw new Exception("Não existe!");
+//        }
+//    }
 
     public List<Cliente> ler() {
         return clienteRepository.findAll();
