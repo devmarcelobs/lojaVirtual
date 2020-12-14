@@ -1,5 +1,7 @@
 package com.example.lojavirtual.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,7 +9,7 @@ import javax.persistence.Id;
 import org.hibernate.annotations.Type;
 
 @Entity
-public class Produto {
+public class Produto implements Serializable{
 
 	@Id
 	@Column(name="codigoBarra", nullable=false)
@@ -21,10 +23,6 @@ public class Produto {
 	
 	@Column(name="valor", nullable=false)
 	private Double valor;
-	
-	@Type(type = "serializable")
-	@Column(name="Carrinho", nullable=true)
-	private Carrinho carrinho;
 
 	public int getCodigoBarra() {
 		return codigoBarra;
@@ -56,13 +54,5 @@ public class Produto {
 
 	public void setValor(Double valor) {
 		this.valor = valor;
-	}
-
-	public Carrinho getCarrinho() {
-		return carrinho;
-	}
-
-	public void setCarrinho(Carrinho carrinho) {
-		this.carrinho = carrinho;
 	}
 }

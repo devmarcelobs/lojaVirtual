@@ -1,5 +1,7 @@
 package com.example.lojavirtual.controller;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.lojavirtual.model.Adm;
@@ -39,12 +42,16 @@ public class AdmController implements Login{
 		this.carrinhoRepository = carrinhoRepository;
 	}*/
 	
-	@Override
 	@GetMapping("/loginAdm")
-	public boolean login(@RequestBody String login, String senha, Adm adm) {
+	@Override
+	public boolean login(@RequestBody Adm adm) {
+		System.out.println("ok");
 		if(admRepository.findById(adm.getId())!=null) {
-			if(adm.getLogin().equals(login)) {
-				if(adm.getSenha().equals(senha)) {
+			System.out.println("ok");
+			if(adm.getLogin().equals("teste")) {
+				System.out.println("ok");
+				if(adm.getSenha().equals("teste")) {
+					System.out.println("ok");
 					return true;
 				}
 			}
@@ -54,6 +61,7 @@ public class AdmController implements Login{
 	}
 	
 	@PostMapping("/addProduto")
+	@ResponseBody
 	public boolean CadastroProduto(@RequestBody Produto produto) {
 		if(produtoRepository.findByCodigoBarra(produto.getCodigoBarra())==null) {
 			produtoRepository.save(produto);
@@ -77,13 +85,11 @@ public class AdmController implements Login{
 		}
 	}
 	
-	//é possivel essa logica de adicionar o carrinho a um produto e depois adicionar o produto a um carrinho (não fica semelhante)
-	public boolean AdicionarProdutoCarrinho(Integer id, Carrinho carrinho, Integer codigoBarra, Produto produto, int quantidade) {
-		if(carrinhoRepository.findById(carrinho.getId())!=null) {
-			if(produtoRepository.findByCodigoBarra(produto.getCodigoBarra())!=null) {
-				produto.setCarrinho(carrinho);
-				carrinho.setProdutos(produto);
-				carrinho.setQuantidade(quantidade);
+	@PostMapping("/addProdutoCarrinho")
+	public boolean AdicionarProdutoCarrinho(@RequestBody Carrinho carrinho) {
+		if(carrinhoRepository.findById(carrinho.getId())==null) {
+			if(produtoRepository.findByCodigoBarra(carrinho.getProdutos().getCodigoBarra())!=null) {
+				carrinhoRepository.save(carrinho);
 				return true;
 			}
 			else {
@@ -95,12 +101,18 @@ public class AdmController implements Login{
 		}
 	}
 	
-	public List<Cliente> ListaCliente(String cpf, Cliente cliente){
-		if(clienteRepository.findByCpf(cliente.getCpf())!=null) {
-			return clienteRepository.findAll();
+	@GetMapping("/listaCliente")
+	public boolean ListaCliente(){
+		List<Cliente> lista = clienteRepository.findAll();
+		if(lista.isEmpty()) {
+			System.out.println("Lista de Clientes vazia: ");
+			return false;
 		}
 		else {
-			return null;
+			for(Cliente cliente : lista) {
+				System.out.println("CPF: "+cliente.getCpf()+" | "+"Nome: "+cliente.getNome()+" | "+"Endereco: "+cliente.getEndereco());
+			}
+			return true;
 		}
 	}
 }

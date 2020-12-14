@@ -37,10 +37,10 @@ public class CarrinhoControlerTeste {
     }
 
 
-    public List<Carrinho> getFakeList() {
+    /*public List<Carrinho> getFakeList() {
         List<Carrinho> carrinhos = new ArrayList<>();
 //        carrinhos.add(Ca)
-    }
+    }*/
 
 
 }
