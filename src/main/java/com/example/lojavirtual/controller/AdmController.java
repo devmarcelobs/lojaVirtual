@@ -77,7 +77,7 @@ public class AdmController implements Login{
 		}
 	}
 	
-	//é possivel essa logica de adicionar o carrinho a um produto e depois adicionar o produto a um carrinho (não fica semelhante) 
+	//é possivel essa logica de adicionar o carrinho a um produto e depois adicionar o produto a um carrinho (não fica semelhante)
 	public boolean AdicionarProdutoCarrinho(Integer id, Carrinho carrinho, Integer codigoBarra, Produto produto, int quantidade) {
 		if(carrinhoRepository.findById(carrinho.getId())!=null) {
 			if(produtoRepository.findByCodigoBarra(produto.getCodigoBarra())!=null) {

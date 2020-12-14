@@ -12,4 +12,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, String> {
 	
 	//@Query("select new com.example.lojavirtual.model.Cliente (c.nome, c.endereco) " + "from Cliente c") é necessario uma query especificando os campos a serem retornados?
 	List<Cliente> findAll();
+
+    Cliente update(Cliente novoCliente);
 }
