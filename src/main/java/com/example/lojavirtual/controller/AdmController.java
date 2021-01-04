@@ -25,38 +25,41 @@ import com.example.lojavirtual.repository.ProdutoRepository;
 @RestController
 @RequestMapping("/Adm")
 public class AdmController implements Login{
-	@Autowired
+	//@Autowired
 	private AdmRepository admRepository;
-	@Autowired
+	//@Autowired
 	private ProdutoRepository produtoRepository;
-	@Autowired
+	//@Autowired
 	private ClienteRepository clienteRepository;
-	@Autowired
+	//@Autowired
 	private CarrinhoRepository carrinhoRepository;
 	
-	/*@Autowired
+	@Autowired
 	public AdmController(AdmRepository admRepository, ProdutoRepository produtoRepository, ClienteRepository clienteRepository, CarrinhoRepository carrinhoRepository) {
 		this.admRepository = admRepository;
 		this.produtoRepository = produtoRepository;
 		this.clienteRepository = clienteRepository;
 		this.carrinhoRepository = carrinhoRepository;
+	}
+	
+	/*@Autowired
+	public AdmController(ProdutoRepository produtoRepository) {
+		this.produtoRepository = produtoRepository;
 	}*/
 	
 	@GetMapping("/loginAdm")
 	@Override
-	public boolean login(@RequestBody Adm adm) {
-		System.out.println("ok");
+	public boolean login(String login, String senha, @RequestBody Adm adm) {
 		if(admRepository.findById(adm.getId())!=null) {
-			System.out.println("ok");
-			if(adm.getLogin().equals("teste")) {
-				System.out.println("ok");
-				if(adm.getSenha().equals("teste")) {
-					System.out.println("ok");
+			if(adm.getLogin().equals(login)) {
+				if(adm.getSenha().equals(senha)) {
+					System.out.println("Login realizado com sucesso");
 					return true;
 				}
 			}
 		}
 		
+		System.out.println("Usuário ou Senha incorretos");
 		return false;
 	}
 	
@@ -65,6 +68,7 @@ public class AdmController implements Login{
 	public boolean CadastroProduto(@RequestBody Produto produto) {
 		if(produtoRepository.findByCodigoBarra(produto.getCodigoBarra())==null) {
 			produtoRepository.save(produto);
+			System.out.println("Produto cadastrado com sucesso");
 			return true;
 		}
 		else {
@@ -77,6 +81,7 @@ public class AdmController implements Login{
 	public boolean CadastroCliente(@RequestBody Cliente cliente) {
 		if(clienteRepository.findByCpf(cliente.getCpf())==null) {
 			clienteRepository.save(cliente);
+			System.out.println("Cliente cadastrado com sucesso");
 			return true;
 		}
 		else {
@@ -92,20 +97,16 @@ public class AdmController implements Login{
 				carrinhoRepository.save(carrinho);
 				return true;
 			}
-			else {
-				return false;
-			}
 		}
-		else {
-			return false;
-		}
+		System.out.println("Carrinho já criado");
+		return false;
 	}
 	
 	@GetMapping("/listaCliente")
 	public boolean ListaCliente(){
 		List<Cliente> lista = clienteRepository.findAll();
 		if(lista.isEmpty()) {
-			System.out.println("Lista de Clientes vazia: ");
+			System.out.println("Lista de Clientes vazia");
 			return false;
 		}
 		else {

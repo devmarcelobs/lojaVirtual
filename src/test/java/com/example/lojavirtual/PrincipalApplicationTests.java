@@ -1,6 +1,5 @@
 package com.example.lojavirtual;
 
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
@@ -66,7 +65,7 @@ class PrincipalApplicationTests {
 				.contentType(MediaType.APPLICATION_JSON_VALUE))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andReturn();
-		
+
 		assertTrue(om.readValue(result.getResponse().getContentAsString(), Boolean.class) == Boolean.TRUE);
 	}
 	
@@ -166,5 +165,5 @@ class PrincipalApplicationTests {
 		
 		assertTrue(om.readValue(result.getResponse().getContentAsString(), Boolean.class) == Boolean.TRUE);
 	}
-
+	
 }
