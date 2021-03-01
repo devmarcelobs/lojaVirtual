@@ -9,7 +9,9 @@ pipeline{
             }
         }
         stage('Build'){
-            sh 'mvn clean -f lojaVirtual'
+            steps{
+                sh 'mvn clean -f lojaVirtual'
+            }
         }
     }  
 }
