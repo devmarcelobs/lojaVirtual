@@ -12,9 +12,6 @@ pipeline{
             steps{
                 sh './mvnw test'
             }
-            post{
-                junit '**/src/test/com/mockito/AdmControllerMockito.java'
-            }
         }
     }  
 }
