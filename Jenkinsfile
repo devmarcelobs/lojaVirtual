@@ -8,5 +8,8 @@ pipeline{
                 sh "ls -lart ./*"
             }
         }
+        stage('Build'){
+            sh 'mvn clean -f lojaVirtual'
+        }
     }  
 }
