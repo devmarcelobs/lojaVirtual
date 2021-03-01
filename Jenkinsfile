@@ -8,12 +8,11 @@ node{
             }
         }
     }*/
-    stages{
-        stage('Build'){
-            git url: 'https://github.com/marcelim122/lojaVirtual.git'
-            withMaven{
-                sh "mvn clean verify"
-            }
+    
+    stage('Build'){
+        git url: 'https://github.com/marcelim122/lojaVirtual.git'
+        withMaven{
+            sh "mvn clean verify"
         }
-    }  
+    } 
 }
