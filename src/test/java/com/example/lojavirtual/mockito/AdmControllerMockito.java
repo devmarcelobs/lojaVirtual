@@ -5,11 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Rule;
+//import org.junit.Rule;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
+//import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -46,8 +46,8 @@ public class AdmControllerMockito {
 	@Mock
 	private CarrinhoRepository carrinhoRepository;
 	
-	@Rule
-	public MockitoRule rule = MockitoJUnit.rule();
+	/*@Rule
+	public MockitoRule rule = MockitoJUnit.rule();*/
 	
 	private AdmController admController;
 	
